@@ -193,11 +193,22 @@ int main()
     Node *sixth = new Node(60);
 
     head->next = second;
+    head->prev = NULL;
+
     second->next = third;
+    second->prev = head;
+
     third->next = fourth;
+    third->prev = second;
+
     fourth->next = fifth;
+    fourth->prev = third;
+
     fifth->next = sixth;
+    fifth->prev = fourth;
+
     sixth->next = NULL;
+    sixth->prev = fifth;
 
     cout << "=========== Linked List before insertion ===========" << endl;
     LinkedListTraversal(head);
